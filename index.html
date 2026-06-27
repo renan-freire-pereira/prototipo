@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS - Dashboard Unificado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-escuro: #4F6DD1;
+            --azul-medio: #6A85DD;
+            --azul-principal: #859CE8;
+            --azul-claro: #9FB4F4;
+            --azul-fundo: #BACBFF;
+        }
+
+        body {
+            background-color: #f4f6fc;
+        }
+
+        /* Sidebar Fixa para Desktop */
+        @media (min-width: 768px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 100;
+                height: 100vh;
+            }
+            main {
+                margin-left: 16.666667%; /* Compensa o col-md-2 */
+            }
+        }
+
+        .sidebar {
+            background-color: var(--azul-escuro) !important;
+            box-shadow: 3px 0 10px rgba(79, 109, 209, 0.15);
+        }
+
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            margin: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: var(--azul-medio) !important;
+            color: #ffffff !important;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar .nav-link:hover:not(.active) {
+            background-color: var(--azul-claro) !important;
+            color: var(--azul-escuro) !important;
+        }
+
+        .sidebar hr {
+            color: var(--azul-claro);
+            opacity: 0.25;
+        }
+
+        /* Estilização Manual de Cards para combinar com a paleta */
+        .card-custom {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+        .card-custom:hover {
+            transform: translateY(-2px);
+        }
+        .icon-shape {
+            width: 48px;
+            height: 48px;
+            background-color: var(--azul-fundo);
+            color: var(--azul-escuro);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark d-md-none px-3" style="background-color: var(--azul-escuro);">
+    <a class="navbar-brand fw-bold" href="#">GCS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse px-3 pt-3 text-white">
+            <div class="d-flex flex-column justify-content-between h-100">
+                <div>
+                    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none px-2 mt-2">
+                        <i class="bi bi-grid-1x2-fill fs-4 me-2"></i>
+                        <span class="fs-4 fw-bold">GCS</span>
+                    </a>
+                    <hr>
+                    
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="bi bi-speedometer2 fs-5"></i> Dashboard Geral
+                            </a>
+                        </li>
+                        <li><a href="estoques.html" class="nav-link"><i class="bi bi-box-seam fs-5"></i> Estoques</a></li>
+                        <li><a href="filiais.html" class="nav-link"><i class="bi bi-building fs-5"></i> Franqueadas</a></li>
+                        <li><a href="fornecedores.html" class="nav-link"><i class="bi bi-truck fs-5"></i> Fornecedores</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pb-4">
+                    <hr>
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle px-2" id="dropdownUser" data-bs-toggle="dropdown">
+                            <div class="rounded-circle text-dark d-flex align-items-center justify-content-center me-2" style="width:32px; height:32px; font-weight: bold; background-color: var(--azul-fundo) !important;">
+                                U
+                            </div>
+                            <strong>Usuário</strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark shadow">
+                            <li><a class="dropdown-item" href="#">Minha Conta</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Dashboard Consolidado</h2>
+                <span class="text-muted small">Dados em tempo real</span>
+            </div>
+            <hr>
+
+            <div class="row g-3 mb-4">
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="card card-custom p-3 bg-white">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="text-muted text-uppercase small fw-bold">Status de Estoque</span>
+                                <h3 class="mb-0 mt-1 fw-bold">92%</h3>
+                                <small class="text-danger fw-bold"><i class="bi bi-arrow-down-right"></i> 1 Alerta crítico</small>
+                            </div>
+                            <div class="icon-shape">
+                                <i class="bi bi-box-seam fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="card card-custom p-3 bg-white">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="text-muted text-uppercase small fw-bold">Franqueadas Ativas</span>
+                                <h3 class="mb-0 mt-1 fw-bold">14 Lojas</h3>
+                                <small class="text-success fw-bold"><i class="bi bi-arrow-up-right"></i> +2 este mês</small>
+                            </div>
+                            <div class="icon-shape">
+                                <i class="bi bi-building fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="card card-custom p-3 bg-white">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="text-muted text-uppercase small fw-bold">Fornecedores Homologados</span>
+                                <h3 class="mb-0 mt-1 fw-bold">38</h3>
+                                <small class="text-muted">Todos operacionais</small>
+                            </div>
+                            <div class="icon-shape">
+                                <i class="bi bi-truck fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-12 col-lg-7">
+                    <div class="card card-custom p-4 bg-white h-100">
+                        <h5 class="mb-3 text-secondary fw-bold">Capacidade de Estoque por Unidade (%)</h5>
+                        <div style="position: relative; height:280px;">
+                            <canvas id="canvasEstoque"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <div class="card card-custom p-4 bg-white h-100">
+                        <h5 class="mb-3 text-secondary fw-bold"><i class="bi bi-clock-history me-2"></i>Logs e Alertas</h5>
+                        
+                        <div class="overflow-y-auto" style="max-height: 280px;">
+                            <div class="alert alert-success d-flex align-items-center gap-2 py-2 mb-2" style="font-size: 0.9rem;">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <div>São Carlos: Carnes entregues. <span class="text-muted small">(Hoje - 12:22)</span></div>
+                            </div>
+
+                            <div class="alert alert-success d-flex align-items-center gap-2 py-2 mb-2" style="font-size: 0.9rem;">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <div>Ribeirão Preto: Carnes entregues. <span class="text-muted small">(18/05 - 12:22)</span></div>
+                            </div>
+
+                            <div class="alert alert-danger d-flex align-items-center gap-2 py-2 mb-2" style="font-size: 0.9rem;">
+                                <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                                <div>
+                                    Araraquara: Pães no limite! 
+                                    <a href="#" class="alert-link text-decoration-underline ms-1">Solicitar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('canvasEstoque').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['São Carlos', 'Ribeirão Preto', 'Araraquara', 'Campinas'],
+            datasets: [{
+                label: 'Nível Atual (%)',
+                data: [85, 90, 15, 78], 
+                backgroundColor: [
+                    '#6A85DD', 
+                    '#4F6DD1',
+                    '#dc3545',
+                    '#859CE8' 
+                ],
+                borderWidth: 0,
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            },
+            plugins: {
+                legend: { display: false } 
+            }
+        }
+    });
+</script>
+</body>
+</html>
