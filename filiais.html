@@ -255,14 +255,12 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <script>
-    // Mapa configurado com visualização ampla do Brasil para englobar todas as regiões
     const map = L.map('map').setView([-14.2350, -51.9253], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Lista consolidada com Sudeste e Nordeste juntos
     const franqueadas = [
         // Sudeste
         { nome: "Franqueada São Carlos", coords: [-22.0175, -47.8908] },
@@ -287,5 +285,3 @@
 </script>
 </body>
 </html>
-
-```
