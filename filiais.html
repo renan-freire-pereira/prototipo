@@ -244,6 +244,42 @@
                     </div>
                 </div>
 
+
+                 <div class="col">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/panoramic_view_of_the_historic_center_of_belem_do_para.webp?w=1600&h=900&p=right" alt="São Luís">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <strong>Franqueada em Belém - PA</strong>
+                            <button class="btn btn-primary mt-3">Ver informações</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                 <div class="col">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZGT9a388_ql2g7QooBAMFoIVKGM4_SvqCqTJJn2LQCQ&s=10" alt="São Luís">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <strong>Franqueada em São Luís - MA</strong>
+                            <button class="btn btn-primary mt-3">Ver informações</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                 
+                 <div class="col">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzn4Lxmelydajk4zm5sLneV6eFfnmktWB6vtXxG-P0OBoubcGSYti-CPk&s=10" alt="São Luís">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <strong>Franqueada em Imperatriz - MA</strong>
+                            <button class="btn btn-primary mt-3">Ver informações</button>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>        
 
         </main>
@@ -261,21 +297,25 @@
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    const franqueadas = [
-        // Sudeste
-        { nome: "Franqueada São Carlos", coords: [-22.0175, -47.8908] },
-        { nome: "Franqueada Ribeirão Preto", coords: [-21.1704, -47.8103] },
-        { nome: "Franqueada São Paulo", coords: [-23.5505, -46.6333] },
-        { nome: "Franqueada Araraquara", coords: [-21.7944, -48.1756] },
-        { nome: "Franqueada São José do Rio Preto", coords: [-20.8113, -49.3758] },
-        
-        // Nordeste
-        { nome: "Franqueada Salvador", coords: [-12.9714, -38.5014] },
-        { nome: "Franqueada Recife", coords: [-8.0542, -34.8813] },
-        { nome: "Franqueada Fortaleza", coords: [-3.7319, -38.5267] },
-        { nome: "Franqueada Natal", coords: [-5.7945, -35.2110] },
-        { nome: "Franqueada São Luís", coords: [-2.5307, -44.3068] }
-    ];
+   const franqueadas = [
+    // Sudeste
+    { nome: "Franqueada São Carlos", coords: [-22.0175, -47.8908] },
+    { nome: "Franqueada Ribeirão Preto", coords: [-21.1704, -47.8103] },
+    { nome: "Franqueada São Paulo", coords: [-23.5505, -46.6333] },
+    { nome: "Franqueada Araraquara", coords: [-21.7944, -48.1756] },
+    { nome: "Franqueada São José do Rio Preto", coords: [-20.8113, -49.3758] },
+    
+    // Nordeste
+    { nome: "Franqueada Salvador", coords: [-12.9714, -38.5014] },
+    { nome: "Franqueada Recife", coords: [-8.0542, -34.8813] },
+    { nome: "Franqueada Fortaleza", coords: [-3.7319, -38.5267] },
+    { nome: "Franqueada Natal", coords: [-5.7945, -35.2110] },
+    { nome: "Franqueada São Luís", coords: [-2.5307, -44.3068] },
+    { nome: "Franqueada Imperatriz", coords: [-5.5264, -47.4764] }, // Nordeste (Maranhão) - Divisa com o Norte
+
+    // Norte
+    { nome: "Franqueada Belém", coords: [-1.4558, -48.4902] }
+];
 
     franqueadas.forEach(local => {
         L.marker(local.coords)
