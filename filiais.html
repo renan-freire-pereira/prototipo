@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Lateral Personalizado</title>
+    <title>Menu Lateral Personalizado - Nordeste</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -129,7 +129,7 @@
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
 
-            <h2>Suas Franqueadas</h2>
+            <h2>Suas Franqueadas (Nordeste)</h2>
             <hr>
 
             <div class="row mb-4">
@@ -145,9 +145,9 @@
                 
                 <div class="col">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://i1.wp.com/guialugaresturisticos.com/wp-content/uploads/2020/09/Sao-CarlosSPsao-carlos-catedral-aerea-2.jpg?fit=660%2C371&ssl=1" alt="São Carlos">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1599946347371-68eb71b16afc?auto=format&fit=crop&w=600&q=80" alt="Salvador">
                         <div class="card-body d-flex flex-column justify-content-between">
-                            <strong>Franqueada em São Carlos</strong>
+                            <strong>Franqueada em Salvador - BA</strong>
                             <button class="btn btn-primary mt-3">Ver informações</button>
                         </div>
                     </div>
@@ -155,9 +155,9 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://tse3.mm.bing.net/th/id/OIP.FHSPHEuLY2XXI2cVPiy3SAHaE7?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ribeirão Preto">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1601564267439-d3fb8b030db8?auto=format&fit=crop&w=600&q=80" alt="Recife">
                         <div class="card-body d-flex flex-column justify-content-between">
-                            <strong>Franqueada em Ribeirão Preto</strong>
+                            <strong>Franqueada em Recife - PE</strong>
                             <button class="btn btn-primary mt-3">Ver informações</button>
                         </div>
                     </div>
@@ -165,9 +165,9 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://tse2.mm.bing.net/th/id/OIP.XfxZm6QqdMnJQCF95rxS-gHaE8?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="São Paulo">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1594914197367-db040989f6b8?auto=format&fit=crop&w=600&q=80" alt="Fortaleza">
                         <div class="card-body d-flex flex-column justify-content-between">
-                            <strong>Franqueada em São Paulo</strong>
+                            <strong>Franqueada em Fortaleza - CE</strong>
                             <button class="btn btn-primary mt-3">Ver informações</button>
                         </div>
                     </div>
@@ -175,9 +175,9 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://tse1.mm.bing.net/th/id/OIP.PwbOWn3aJr0ThXod22K9vAHaFH?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Araraquara">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80" alt="Natal">
                         <div class="card-body d-flex flex-column justify-content-between">
-                            <strong>Franqueada em Araraquara</strong>
+                            <strong>Franqueada em Natal - RN</strong>
                             <button class="btn btn-primary mt-3">Ver informações</button>
                         </div>
                     </div>
@@ -185,9 +185,9 @@
 
                 <div class="col">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://tse1.mm.bing.net/th/id/OIP.kXHqprYLpbAzHpujlRmsFgHaEJ?cb=thfvnextfalcon3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="São José do Rio Preto">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1629815049040-0259e86c0b32?auto=format&fit=crop&w=600&q=80" alt="São Luís">
                         <div class="card-body d-flex flex-column justify-content-between">
-                            <strong>Franqueada em São José do Rio Preto</strong>
+                            <strong>Franqueada em São Luís - MA</strong>
                             <button class="btn btn-primary mt-3">Ver informações</button>
                         </div>
                     </div>
@@ -204,18 +204,20 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <script>
-    const map = L.map('map').setView([-22.5, -48.5], 7);
+    // Centralizado no meio do Nordeste (coordenadas aproximadas da região central e zoom ajustado)
+    const map = L.map('map').setView([-7.5, -39.5], 5);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
+    // Coordenadas reais das capitais do Nordeste
     const franqueadas = [
-        { nome: "Franqueada São Carlos", coords: [-22.0175, -47.8908] },
-        { nome: "Franqueada Ribeirão Preto", coords: [-21.1704, -47.8103] },
-        { nome: "Franqueada São Paulo", coords: [-23.5505, -46.6333] },
-        { nome: "Franqueada Araraquara", coords: [-21.7944, -48.1756] },
-        { nome: "Franqueada São José do Rio Preto", coords: [-20.8113, -49.3758] }
+        { nome: "Franqueada Salvador", coords: [-12.9714, -38.5014] },
+        { nome: "Franqueada Recife", coords: [-8.0542, -34.8813] },
+        { nome: "Franqueada Fortaleza", coords: [-3.7319, -38.5267] },
+        { nome: "Franqueada Natal", coords: [-5.7945, -35.2110] },
+        { nome: "Franqueada São Luís", coords: [-2.5307, -44.3068] }
     ];
 
     franqueadas.forEach(local => {
