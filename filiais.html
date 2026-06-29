@@ -280,6 +280,17 @@
                 </div>
 
 
+                <div class="col">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQpR7upVuFOlQ7Db__eUiMNkEeNYJl9jFH01TNWzilOQ&s=10" alt="São Luís">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <strong>Franqueada em Marabá - PA</strong>
+                            <button class="btn btn-primary mt-3">Ver informações</button>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>        
 
         </main>
@@ -291,19 +302,19 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <script>
-    const map = L.map('map').setView([-14.2350, -51.9253], 4);
+    const map = L.map('map').setView([-5.5264, -47.4764], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-   const franqueadas = [
+const franqueadas = [
     // Sudeste
     { nome: "Franqueada São Carlos", coords: [-22.0175, -47.8908] },
     { nome: "Franqueada Ribeirão Preto", coords: [-21.1704, -47.8103] },
     { nome: "Franqueada São Paulo", coords: [-23.5505, -46.6333] },
     { nome: "Franqueada Araraquara", coords: [-21.7944, -48.1756] },
-    { nome: "Franqueada São José do Rio Preto", coords: [-20.8113, -49.3758] },
+    { nome: "Franqueada São Jose do Rio Preto", coords: [-20.8113, -49.3758] },
     
     // Nordeste
     { nome: "Franqueada Salvador", coords: [-12.9714, -38.5014] },
@@ -311,10 +322,11 @@
     { nome: "Franqueada Fortaleza", coords: [-3.7319, -38.5267] },
     { nome: "Franqueada Natal", coords: [-5.7945, -35.2110] },
     { nome: "Franqueada São Luís", coords: [-2.5307, -44.3068] },
-    { nome: "Franqueada Imperatriz", coords: [-5.5264, -47.4764] }, // Nordeste (Maranhão) - Divisa com o Norte
+    { nome: "Franqueada Imperatriz", coords: [-5.5264, -47.4764] }, // Maranhão (Vizinha de Marabá)
 
     // Norte
-    { nome: "Franqueada Belém", coords: [-1.4558, -48.4902] }
+    { nome: "Franqueada Belém", coords: [-1.4558, -48.4902] },
+    { nome: "Franqueada Marabá", coords: [-5.3688, -49.1235] } // Pará (Próxima a Imperatriz e Belém)
 ];
 
     franqueadas.forEach(local => {
