@@ -1,3 +1,8 @@
+Compreendido! O código abaixo mantém **todas as cidades do Sudeste** (São Carlos, Ribeirão Preto, São Paulo, Araraquara e São José do Rio Preto) e **adiciona as novas cidades do Nordeste** (Salvador, Recife, Fortaleza, Natal e São Luís) à lista e ao mapa.
+
+O centro do mapa foi configurado com um zoom mais amplo (nível 4) para que todas as unidades fiquem visíveis na tela ao mesmo tempo.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -254,21 +259,21 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <script>
-    // Ajustado o centro para o meio do Brasil e zoom reduzido para 4 para englobar SP e Nordeste juntos
+    // Mapa configurado com visualização ampla do Brasil para englobar todas as regiões
     const map = L.map('map').setView([-14.2350, -51.9253], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Lista unificada com as cidades antigas de SP e as novas do Nordeste
+    // Lista consolidada com Sudeste e Nordeste juntos
     const franqueadas = [
-        // São Paulo
+        // Sudeste
         { nome: "Franqueada São Carlos", coords: [-22.0175, -47.8908] },
         { nome: "Franqueada Ribeirão Preto", coords: [-21.1704, -47.8103] },
         { nome: "Franqueada São Paulo", coords: [-23.5505, -46.6333] },
         { nome: "Franqueada Araraquara", coords: [-21.7944, -48.1756] },
-        { nome: "Franqueada São Jose do Rio Preto", coords: [-20.8113, -49.3758] },
+        { nome: "Franqueada São José do Rio Preto", coords: [-20.8113, -49.3758] },
         
         // Nordeste
         { nome: "Franqueada Salvador", coords: [-12.9714, -38.5014] },
@@ -286,3 +291,5 @@
 </script>
 </body>
 </html>
+
+```
